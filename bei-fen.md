@@ -58,6 +58,21 @@ class UserFavorite(models.Model):
         verbose_name = u"用户收藏"
         verbose_name_plural = verbose_name
 ```
+用户消息
+```python
+class UserMessage(models.Model):
+    #消息分为两种，一：定向发给某一个user 二：系统发给所有人的消息
+    #0->发给所有人信息 ，如果时等于用户id的据取出来
+    user = models.IntegerField(default=0,verbose_name=u"接受用户")
+    message=models.CharField(max_length=500,verbose_name=u"消息内容")
+    has_read = models.BooleanField(default=False,verbose_name=u"是否已读")
+    add_time = models.DateTimeField(default=datetime.now, verbose_name=u"添加时间")
+    
+    class Meta:
+        verbose_name= u"用户消息"
+        verbose_name_plural=verbose_name
+```
+
 
 
 
