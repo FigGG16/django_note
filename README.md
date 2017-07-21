@@ -193,5 +193,5 @@ form表单提交一定要加上
   <textarea id="message" name="message"  placeholder="请输入你的建议">{{ my_message.message }}</textarea>
  ```
 
-
+建立
 
