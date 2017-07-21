@@ -278,7 +278,7 @@ verbose_name_plural=verbose_name
 
 
 
-当我们使用命令行python manage.py runserver时会报错，解决办法：
+####当我们使用命令行python manage.py runserver时会报错，解决办法：
 
 ####4.5在setting里把app加到目录下
 
