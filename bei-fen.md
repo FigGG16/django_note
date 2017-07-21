@@ -29,3 +29,4 @@
         verbose_name = u"课程机构"
         verbose_name_plural=verbose_name
  ```
+ 
