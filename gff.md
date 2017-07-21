@@ -1,9 +1,7 @@
 # 数据库的设计
-![](/assets/Snip20170720_1.png)
 
 
-
-
+![](/assets/Snip20170717_2.png)
 
 
 
