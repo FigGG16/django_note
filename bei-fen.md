@@ -1,7 +1,7 @@
  - 授课机构的model设计
  ![](/assets/Snip20170720_5.png)
  新建课程机构App organization
- 创建城市model
+ 创建城市model(外键)
  ```python
  class CityDict(models.Model):
     name=models.CharField(max_length=20,verbose_name=u"城市")
