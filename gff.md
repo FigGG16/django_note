@@ -132,7 +132,7 @@ startapp users
    ```
  - ####3.4授课机构的model设计
  ![](/assets/Snip20170720_5.png)
- ![](/assets/Snip20170720_5.png)
+ 
  新建课程机构App organization
  创建城市model(外键)
  ```python
@@ -177,7 +177,7 @@ startapp users
     class Meta:
         verbose_name = u"教师"
         verbose_name_plural=verbose_name
- ```![](/assets/Snip20170720_6.png)
+ ```
  - operation models.py设计
 ![](/assets/Snip20170720_6.png)
 建用户咨询model
