@@ -130,7 +130,7 @@ startapp users
         verbose_name = u"课程资源"
         verbose_name_plural=verbose_name
    ```
- - ####授课机构的model设计
+ - ####3.4授课机构的model设计
  ![](/assets/Snip20170720_5.png)
  ![](/assets/Snip20170720_5.png)
  新建课程机构App organization
