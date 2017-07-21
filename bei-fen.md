@@ -74,13 +74,14 @@ class UserMessage(models.Model):
 ```
 用户学习课程
 ```python
+  #CourseComments model比这个多了个评论。可以使用继承的方式
 class UserCourse(models.Model):
     user = models.ForeignKey(UserProfile, verbose_name=u"用户")
     course = models.ForeignKey(Courses, verbose_name=u"课程")
     add_time = models.DateTimeField(default=datetime.now, verbose_name=u"添加时间")
     
     class Meta:
-        verbose_name= u"用户消息"
+        verbose_name= u"用户课程"
         verbose_name_plural=verbose_name
 ```
 
