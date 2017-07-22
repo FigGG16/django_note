@@ -16,7 +16,7 @@ admin123
 遇到字段不符合，搜索并替换对应的字段值
 
 ```
-command + shift +R 
+command + shift +R
 ```
 
 修改后台为中文显示,时间与时区,setting配置
@@ -32,7 +32,7 @@ TIME_ZONE = 'Asia/Shanghai'
 USE_TZ = False
 ```
 
-
+在users app 的admin.py注册 user\_profile
 
 
 
