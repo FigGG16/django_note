@@ -16,8 +16,10 @@ admin123
 遇到字段不符合，搜索并替换对应的字段值
 
 ```
-command + shift +R
+makemigrations users#表名
 ```
+
+
 
 修改后台为中文显示,时间与时区,setting配置
 
@@ -33,6 +35,17 @@ USE_TZ = False
 ```
 
 在users app 的admin.py注册 user\_profile
+
+```py
+rom .models import UserProfile
+
+class UserProfileAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(UserProfile,UserProfileAdmin)
+```
+
+问题1未解决：取消外键检查时，将不能添加账号
 
 
 
