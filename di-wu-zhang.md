@@ -45,9 +45,11 @@ admin.site.register(UserProfile,UserProfileAdmin)
 
 ## 问题1未解决：取消外键检查时，将不能添加账号
 
-
-
 ## 2.xadmin的安装
 
+```
+sudo pip install -i https://pypi.doubanio.com/simple/ --trusted-host pypi.doubanio.com xadmin
+```
 
+2.1配置setting App
 
