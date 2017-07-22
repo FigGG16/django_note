@@ -65,9 +65,11 @@ import xadmin
 
 urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
-    
+
 ]
 ```
+
+2.3注释掉users 的admin.py默认的admin注册方法
 
 
 
