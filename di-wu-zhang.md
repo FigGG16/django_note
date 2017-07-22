@@ -55,7 +55,7 @@ sudo pip install -i https://pypi.doubanio.com/simple/ --trusted-host pypi.douban
 
 ```
     'xadmin',
-    'crispy-forms'
+    'crispy_forms'
 ```
 
 2.2修改urls
@@ -70,6 +70,4 @@ urlpatterns = [
 ```
 
 2.3注释掉users 的admin.py默认的admin注册方法
-
-
 
