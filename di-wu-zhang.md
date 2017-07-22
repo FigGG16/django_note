@@ -51,5 +51,23 @@ admin.site.register(UserProfile,UserProfileAdmin)
 sudo pip install -i https://pypi.doubanio.com/simple/ --trusted-host pypi.doubanio.com xadmin
 ```
 
-2.1配置setting App
+2.1注册配置setting App
+
+```
+    'xadmin',
+    'crispy-forms'
+```
+
+2.2修改urls
+
+```py
+import xadmin
+
+urlpatterns = [
+    url(r'^xadmin/', xadmin.site.urls),
+    
+]
+```
+
+
 
