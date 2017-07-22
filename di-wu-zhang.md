@@ -47,8 +47,16 @@ admin.site.register(UserProfile,UserProfileAdmin)
 
 ## 2.xadmin的安装
 
+window
+
 ```
 sudo pip install -i https://pypi.doubanio.com/simple/ --trusted-host pypi.doubanio.com xadmin
+```
+
+mac安装要使用github的最新版本
+
+```
+pip install git+git://github.com/sshwsfc/xadmin.git
 ```
 
 2.1注册配置setting App
