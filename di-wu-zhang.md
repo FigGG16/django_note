@@ -19,8 +19,6 @@ admin123
 makemigrations users#表名
 ```
 
-
-
 修改后台为中文显示,时间与时区,setting配置
 
 ```
@@ -45,7 +43,11 @@ class UserProfileAdmin(admin.ModelAdmin):
 admin.site.register(UserProfile,UserProfileAdmin)
 ```
 
-问题1未解决：取消外键检查时，将不能添加账号
+## 问题1未解决：取消外键检查时，将不能添加账号
+
+
+
+## 2.xadmin的安装
 
 
 
