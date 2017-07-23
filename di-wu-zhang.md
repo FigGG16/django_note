@@ -96,5 +96,5 @@ urlpatterns = [
 ]
 ```
 
-2.5下载xadmin的原码，paste到项目文件目录，新建extra\_app目录,把xadmin放到里面最后source Root
+2.5下载xadmin的原码，paste到项目文件目录，新建extra_app目录,把xadmin放到里面.最后source Root extra_app文件夹！ 把环境变量的xadmin的卸载掉
 
