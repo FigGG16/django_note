@@ -6,6 +6,7 @@
 
 ```py
 from django.views.generic import TemplateView
+#emplate_nam自动识别html的路径
                                                                 #name的名字随意
 url('^$',TemplateView.as_view(template_name="index.html"),name="index")
 ```
@@ -31,12 +32,20 @@ STATICFILES_DIRS= [
 url('^login/$',TemplateView.as_view(template_name="login.html"),name="login")
 ```
 
-#### 实现登录页面跳转 
+#### 实现登录页面跳转
 
 ```html
                                            直接指定跳转的html文件即可
-<a style="color:white" class="fr loginbtn" href="/login/">登录</a>  
+<a style="color:white" class="fr loginbtn" href="/login/">登录</a>
 ```
+
+
+
+## 6.3完成用户登录的后台逻辑
+
+django自动添加request函数，当我们配置的url，django就会自动生成一个reques放到函数里面。
+
+在users文件里的views.py添加
 
 
 
