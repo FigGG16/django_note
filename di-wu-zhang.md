@@ -96,5 +96,5 @@ urlpatterns = [
 ]
 ```
 
-
+2.5下载xadmin的原码，paste到项目文件目录，新建extra\_app目录,把xadmin放到里面最后source Root
 
