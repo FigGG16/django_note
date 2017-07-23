@@ -10,5 +10,19 @@ from django.views.generic import TemplateView
 url('^$',TemplateView.as_view(template_name="index.html"),name="index")
 ```
 
+配置setting引用
+
+```py
+STATICFILES_DIRS= [
+    os.path.join(BASE_DIR,'static')
+]
+```
+
+链接样式和图片
+
+```py
+<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+```
+
 
 
