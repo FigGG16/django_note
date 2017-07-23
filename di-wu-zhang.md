@@ -136,7 +136,20 @@ xadmin.site.register(EmailVerifyRecord,EmailVerifyRecordAdmin)
         return '{0}({1})'.format(self.code,self.email)
 ```
 
-#### 3.1，注册轮播图
+#### 3.1，注册轮播图\(以上一样\)
+
+```py
+class BannerAdmin(object):
+
+    list_display = ['title', 'image', 'url', 'index','add_time']
+
+    search_fields =['title', 'image', 'url', 'index']
+
+    list_filter =['title', 'image', 'url', 'index','add_time']
+
+xadmin.site.register(EmailVerifyRecord,EmailVerifyRecordAdmin)
+xadmin.site.register(Banner,BannerAdmin)
+```
 
 
 
