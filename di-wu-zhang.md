@@ -96,9 +96,22 @@ urlpatterns = [
 ]
 ```
 
-2.5下载xadmin的原码，paste到项目文件目录，新建extra\_app目录,把xadmin放到里面.最后source Root extra\_app文件夹！ 把环境变量的xadmin的卸载掉
+2.5下载xadmin的原码，paste到项目文件目录，新建extra\_app目录,把xadmin放到里面.最后source Root extra\_app文件夹！ 把环境变量的xadmin的卸载掉。
 
+## 3. users app的model注册
 
+在users文件夹新建adminx.py文件,打开并添加以下内容
+
+```py
+import xadmin
+
+from .models import EmailVerifyRecord
+
+class EmailVerifyRecordAdmin(object):
+    pass
+
+xadmin.site.register(EmailVerifyRecord,EmailVerifyRecordAdmin)
+```
 
 
 
