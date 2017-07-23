@@ -45,7 +45,7 @@ admin.site.register(UserProfile,UserProfileAdmin)
 
 ## 问题1未解决：取消外键检查时，将不能添加账号
 
-## 2.xadmin的安装
+## 2.xadmin的安装\(直接看第2.5步即可\)
 
 window
 
@@ -96,5 +96,9 @@ urlpatterns = [
 ]
 ```
 
-2.5下载xadmin的原码，paste到项目文件目录，新建extra_app目录,把xadmin放到里面.最后source Root extra_app文件夹！ 把环境变量的xadmin的卸载掉
+2.5下载xadmin的原码，paste到项目文件目录，新建extra\_app目录,把xadmin放到里面.最后source Root extra\_app文件夹！ 把环境变量的xadmin的卸载掉
+
+
+
+
 
