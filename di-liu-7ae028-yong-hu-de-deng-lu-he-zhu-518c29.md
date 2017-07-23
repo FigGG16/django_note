@@ -24,5 +24,13 @@ STATICFILES_DIRS= [
 <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
 ```
 
+登录界面也同理,添加url
+
+```py
+url('^login/$',TemplateView.as_view(template_name="login.html"),name="login")
+```
+
+实现登录页面跳转
+
 
 
