@@ -114,9 +114,11 @@ import xadmin
 from .models import EmailVerifyRecord
 
 class EmailVerifyRecordAdmin(object):
-    #邮箱验证码的各种属性设置
+    #邮箱显示列
     list_display = ['code', 'email', 'send_type', 'send_time']
+    #搜索功能
     search_fields = ['code', 'email', 'send_type']
+    
     list_filter = ['code', 'email', 'send_type', 'send_time']
    # pass
 
