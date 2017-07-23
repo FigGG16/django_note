@@ -131,12 +131,10 @@ xadmin.site.register(EmailVerifyRecord,EmailVerifyRecordAdmin)
 
 ![](/assets/Snip20170722_2.png)
 
-
-
 ```py
     def __str__(self):
         return '{0}({1})'.format(self.code,self.email)
 ```
 
-
+3.1，注册轮播图
 
