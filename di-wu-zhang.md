@@ -79,3 +79,16 @@ urlpatterns = [
 
 2.3注释掉users 的admin.py默认的admin注册方法
 
+
+
+2.4当访问xadmin时会提示 “1146, "Table 'mxonline.xadmin\_usersettings' doesn't exist"“,创建表
+
+```
+makemigrations
+migrate
+```
+
+
+
+
+
