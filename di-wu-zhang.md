@@ -106,7 +106,9 @@ sys.path.insert(0,os.path.join(BASE_DIR,'extra_apps'))
 
 ## 3. users app的model注册
 
-在users文件夹新建adminx.py文件,打开并添加以下内容
+在users文件夹新建adminx.py文件,打开并添加以下内容，效果图所示
+
+![](/assets/Snip20170722_4.png)
 
 ```py
 import xadmin
@@ -118,14 +120,18 @@ class EmailVerifyRecordAdmin(object):
     list_display = ['code', 'email', 'send_type', 'send_time']
     #搜索功能
     search_fields = ['code', 'email', 'send_type']
-    
+    #筛选功能
     list_filter = ['code', 'email', 'send_type', 'send_time']
    # pass
 
 xadmin.site.register(EmailVerifyRecord,EmailVerifyRecordAdmin)
 ```
 
+修复
+
 ![](/assets/Snip20170722_2.png)
+
+
 
 ```py
     def __str__(self):
