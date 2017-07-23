@@ -136,5 +136,7 @@ xadmin.site.register(EmailVerifyRecord,EmailVerifyRecordAdmin)
         return '{0}({1})'.format(self.code,self.email)
 ```
 
-3.1，注册轮播图
+#### 3.1，注册轮播图
+
+
 
