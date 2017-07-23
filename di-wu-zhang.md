@@ -47,26 +47,26 @@ admin.site.register(UserProfile,UserProfileAdmin)
 
 # 2.xadmin的安装\(直接看第2.6步即可\)
 
-window
+#### window
 
 ```python
 sudo pip install -i https://pypi.doubanio.com/simple/ --trusted-host pypi.doubanio.com xadmin
 ```
 
-mac安装要使用github的最新版本
+#### mac安装要使用github的最新版本
 
 ```python
 pip install git+git://github.com/sshwsfc/xadmin.git
 ```
 
-2.1注册配置setting App
+#### 2.1注册配置setting App
 
 ```
     'xadmin',
     'crispy_forms'
 ```
 
-2.2修改urls
+#### 2.2修改urls
 
 ```py
 import xadmin
@@ -77,16 +77,16 @@ urlpatterns = [
 ]
 ```
 
-2.3注释掉users 的admin.py默认的admin注册方法
+#### 2.3注释掉users 的admin.py默认的admin注册方法
 
-2.4当访问xadmin时会提示 “1146, "Table 'mxonline.xadmin\_usersettings' doesn't exist"“,创建表
+#### 2.4当访问xadmin时会提示 “1146, "Table 'mxonline.xadmin\_usersettings' doesn't exist"“,创建表
 
 ```
 makemigrations
 migrate
 ```
 
-2.5  'set' object is not reversible 解决：把大括号换成中括号
+#### 2.5  'set' object is not reversible 解决：把大括号换成中括号
 
 ```py
 urlpatterns = [
@@ -96,9 +96,9 @@ urlpatterns = [
 ]
 ```
 
-2.6下载xadmin的原码，paste到项目文件目录，新建extra\_app目录,把xadmin放到里面.最后source Root extra\_app文件夹！ 把环境变量的xadmin的卸载掉。
+#### 2.6下载xadmin的原码，paste到项目文件目录，新建extra\_app目录,把xadmin放到里面.最后source Root extra\_app文件夹！ 把环境变量的xadmin的卸载掉。
 
-2.7配置setting文件
+#### 2.7配置setting文件
 
 ```py
 sys.path.insert(0,os.path.join(BASE_DIR,'extra_apps'))
@@ -127,7 +127,7 @@ class EmailVerifyRecordAdmin(object):
 xadmin.site.register(EmailVerifyRecord,EmailVerifyRecordAdmin)
 ```
 
-修复
+#### 修复
 
 ![](/assets/Snip20170722_2.png)
 
@@ -155,7 +155,7 @@ xadmin.site.register(Banner,BannerAdmin)
 
 ![](/assets/import.png)
 
-3.3通过外键搜索课程的章节
+#### 3.3通过外键搜索课程的章节
 
 ![](/assets/import2.png)
 
