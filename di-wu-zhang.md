@@ -178,7 +178,7 @@ use_bootswatch = True
 xadmin.site.register(views.BaseAdminView,BaseSetting)
 ```
 
-#### 全局配置
+#### 4.2全局配置
 
 ![](/assets/import4.png)
 
