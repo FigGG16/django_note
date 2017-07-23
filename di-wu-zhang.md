@@ -45,17 +45,17 @@ admin.site.register(UserProfile,UserProfileAdmin)
 
 ## 问题1未解决：取消外键检查时，将不能添加账号
 
-## 2.xadmin的安装\(直接看第2.5步即可\)
+# 2.xadmin的安装\(直接看第2.5步即可\)
 
 window
 
-```
+```python
 sudo pip install -i https://pypi.doubanio.com/simple/ --trusted-host pypi.doubanio.com xadmin
 ```
 
 mac安装要使用github的最新版本
 
-```
+```python
 pip install git+git://github.com/sshwsfc/xadmin.git
 ```
 
@@ -104,7 +104,7 @@ urlpatterns = [
 sys.path.insert(0,os.path.join(BASE_DIR,'extra_apps'))
 ```
 
-## 3. users app的model注册
+# 3. users app的model注册
 
 在users文件夹新建adminx.py文件,打开并添加以下内容，效果图所示
 
@@ -150,6 +150,14 @@ class BannerAdmin(object):
 xadmin.site.register(EmailVerifyRecord,EmailVerifyRecordAdmin)
 xadmin.site.register(Banner,BannerAdmin)
 ```
+#### 3.2添加课程，然后添加章节时出现下效果，重写\_\_str\_\_方法即可
+
+![](/assets/import.png)
+
+3.3通过外键搜索课程的章节
+
+![](/assets/import2.png)
+
 
 
 
