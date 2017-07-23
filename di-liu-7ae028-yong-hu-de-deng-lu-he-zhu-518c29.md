@@ -64,7 +64,8 @@ url('^login/$',login,name="login")
 登录后防止CSRF攻击，在&lt;/form&gt;表单的最后加上
 
 ```
-{%csrf\_token%}
+{%csrf_token%}
 ```
+
 
 
