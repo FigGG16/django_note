@@ -124,7 +124,7 @@ AUTHENTICATION_BACKENDS=(
 
 ## 6.4用from\(类\)实现登录
 
-在user新建forms.py文件并添加
+#### 在users新建forms.py文件并添加
 
 ```py
 from django import forms
@@ -135,7 +135,7 @@ class LoginForm(forms.Form):
     password = forms.CharField(required=True,min_length=5)
 ```
 
-view添加以下
+#### view添加以下
 
 ```py
 from django.views.generic.base import View
@@ -162,24 +162,24 @@ class LoginView(View):
             return render(request, "login.html", {"login_form":login_form})
 ```
 
-urls配置
+#### urls配置
 
 ```py
 from users.views import LoginView
 url('^login/$',LoginView.as_view(),name="login")
 ```
 
-界面优化
+#### 界面优化
 
 ![](/assets/importLogin.png)
 
-在对应的输入框的div添加属性
+#### 在对应的输入框的div添加属性
 
 ```py
 {% if login_form.errors.username %}  errorput {% endif %}
 ```
 
-提示框
+#### 提示框
 
 ```py
 {% for key, error in login_form.errors.items%}{{ error }}{% endfor %}{{ msg }}
