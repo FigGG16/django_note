@@ -46,8 +46,24 @@ django自动添加request函数，当我们配置的url，django就会自动生�
 在users文件里的views.py添加
 
 ```py
-def login(request):
+from django.shortcuts import render
+from django.contrib.auth import authenticate,login
+
+# Create your views here.
+
+def user_login(request):
     if request.method =="POST":
+        #user_name=request.POST.get("username","")
+        #pass_word=request.POST.get("password","")
+        user_name=request.POST['username']
+        pass_word=request.POST['password']
+        user = authenticate(username=user_name,password=pass_word)
+
+        if user is not None:
+            login(request,user)
+            return render(request,"index.html")
+        else:
+            return render(request,"login.html",{})
         pass
     elif request.method =="GET":
         return render(request,"login.html",{})
@@ -56,15 +72,22 @@ def login(request):
 在urls添加
 
 ```py
-from users.views import login
+from users.views import user_login
 
 url('^login/$',login,name="login")
+url('^login/$',user_login,name="login")
 ```
 
 登录后防止CSRF攻击，在&lt;/form&gt;表单的最后加上
 
 ```
 {%csrf_token%}
+```
+
+在主页面判断是否是登录状态
+
+```
+
 ```
 
 
