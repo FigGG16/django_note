@@ -96,23 +96,28 @@ url('^login/$',user_login,name="login")
 
 #### 完善邮箱登录
 
-在setting中重载
-
 在user的 Views.py里添加
 
 ```py
 from django.contrib.auth.backends import ModelBackend
+from django.db.models import Q
 
 from .models import UserProfile
 
 class CustomBackend(ModelBackend):
     def authenticate(self, username=None, password=None, **kwargs):
         try:
-            user = UserProfile.objects.get(username=username)
+            user = UserProfile.objects.get(Q(username=username)|Q(email=username))
             if user.check_password(password):
                  return user
         except Exception as e:
             return None
+```
+
+在setting中重载
+
+```
+
 ```
 
 
