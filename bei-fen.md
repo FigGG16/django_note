@@ -33,12 +33,19 @@ class LoginView(View):
             else:
                 return render(request,"login.html",{"msg": "用户名或密码错误"})
         else:
-            return render(request, "login.html", {"login_form":login_form})
+            return render(request, "login.html", {"login_form":login_form})  
 ```
 
+urls配置
+
+```py
+from users.views import LoginView
+url('^login/$',LoginView.as_view(),name="login")
 ```
-  登录界面优化
-```
+
+
+
+界面优化
 
 ![](/assets/importLogin.png)
 
@@ -51,10 +58,8 @@ class LoginView(View):
 提示框
 
 ```py
-{% for key, error in login_form.errors.items%}{{ error }}{% endfor %}{{ msg }} 
+{% for key, error in login_form.errors.items%}{{ error }}{% endfor %}{{ msg }}
 ```
-
-
 
 
 
