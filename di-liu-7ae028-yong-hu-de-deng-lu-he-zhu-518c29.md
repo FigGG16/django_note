@@ -94,5 +94,18 @@ url('^login/$',user_login,name="login")
 {% endif %}
 ```
 
+#### 完善邮箱登录
+
+在setting中重载
+
+
+
+在user的 Views.py里添加
+
+```
+
+
+```
+
 
 
