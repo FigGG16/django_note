@@ -122,7 +122,7 @@ AUTHENTICATION_BACKENDS=(
 )
 ```
 
-## 6.4用from实现登录
+## 6.4用from\(类\)实现登录
 
 ```py
 from django.views.generic.base import View
