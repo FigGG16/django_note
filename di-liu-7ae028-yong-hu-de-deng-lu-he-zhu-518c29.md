@@ -124,7 +124,24 @@ AUTHENTICATION_BACKENDS=(
 
 ## 6.4用from实现登录
 
+```py
+from django.views.generic.base import View
+class LoginView(View):
+    def get(self,request):
+        return render(request,"login.html",{})
 
+    def post(self,request):
+        user_name = request.POST['username']
+        pass_word = request.POST['password']
+        user = authenticate(username=user_name, password=pass_word)
+
+        if user is not None:
+            login(request, user)
+            return render(request, "index.html")
+        else:
+            return render(request, "login.html", {"msg": "用户名或密码错误"})
+
+```
 
 
 
