@@ -7,7 +7,6 @@ class LoginForm(forms.Form):
     #判断密码是否存在，指定长度
     username=forms.CharField(required=True)
     password = forms.CharField(required=True,min_length=5)
-
 ```
 
 view添加以下
@@ -35,16 +34,18 @@ class LoginView(View):
                 return render(request,"login.html",{"msg": "用户名或密码错误"})
         else:
             return render(request, "login.html", {"login_form":login_form})
-
 ```
 
-      登录界面优化,html 添加
+```
+  登录界面优化
+```
 
 ![](/assets/importLogin.png)
 
+在对应得div添加属性
+
 ```
-
-
+{% if login_form.errors.username %}  errorput {% endif %}
 ```
 
 
