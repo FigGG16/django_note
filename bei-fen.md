@@ -42,11 +42,19 @@ class LoginView(View):
 
 ![](/assets/importLogin.png)
 
-在对应得div添加属性
+在对应的输入框的div添加属性
 
-```
+```py
 {% if login_form.errors.username %}  errorput {% endif %}
 ```
+
+提示框
+
+```py
+{% for key, error in login_form.errors.items%}{{ error }}{% endfor %}{{ msg }} 
+```
+
+
 
 
 
