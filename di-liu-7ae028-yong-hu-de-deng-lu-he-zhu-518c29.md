@@ -140,7 +140,13 @@ class LoginView(View):
             return render(request, "index.html")
         else:
             return render(request, "login.html", {"msg": "用户名或密码错误"})
+```
 
+urls配置
+
+```py
+from users.views import LoginView
+url('^login/$',LoginView.as_view(),name="login")
 ```
 
 
