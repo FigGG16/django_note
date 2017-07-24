@@ -94,7 +94,7 @@ url('^login/$',user_login,name="login")
 {% endif %}
 ```
 
-#### 完善邮箱登录
+#### 通过自定义auth完善邮箱\(和用户名\)登录
 
 在user的 Views.py里添加
 
