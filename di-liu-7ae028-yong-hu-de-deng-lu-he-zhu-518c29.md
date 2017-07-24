@@ -84,10 +84,14 @@ url('^login/$',user_login,name="login")
 {%csrf_token%}
 ```
 
-在主页面判断是否是登录状态
+在index.html,加入django语法判断是否是登录状态
 
-```
-
+```py
+{% if request.user.is_authenticated %}
+    #已经登录执行的代码
+    {% else %}
+    #还未登录时执行的代码
+{% endif %}
 ```
 
 
