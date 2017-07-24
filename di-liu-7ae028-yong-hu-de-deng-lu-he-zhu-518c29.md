@@ -114,11 +114,17 @@ class CustomBackend(ModelBackend):
             return None
 ```
 
-在setting中重载
+在setting中添加
 
+```py
+AUTHENTICATION_BACKENDS=(
+    'users.views.CustomBackend',
+)
 ```
 
-```
+## 6.4用from实现登录
+
+
 
 
 
