@@ -34,9 +34,30 @@
 {% endblock %}
 ```
 
+在继承的html模板只要把包含的内容拷贝到里面就可以了！ 可以进行修改，等等！
+
+
+
 加载课程详情的url
 
+在organization的views添加
+
+```py
+from django.views.generic import View
+class OrgView(View):
+    def get(self,request):
+        return render(request,"org-list.html",{})
 ```
 
+urls配置
+
 ```
+from organization.views import OrgView
+
+ #模版继承 --课程机构首页
+ url(r'org_list/$', OrgView.as_view(), name="org_list"),
+
+```
+
+
 
