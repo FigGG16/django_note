@@ -1,6 +1,6 @@
-注册时判断用户名是否存在
+##### 注册时判断用户名是否存在
 
-在RegisterView类里的post函数验证用户名
+##### 在RegisterView类里的post函数验证用户名
 
 ```py
 if UserProfile.objects.filter(email=user_name):
@@ -32,7 +32,6 @@ class ForgetPwdView(View):
 ##### 配置url
 
 ```py
-
 from users.views import ForgetPwdView
     #找回密码
 url(r'forget/$', ForgetPwdView.as_view(), name="forget_pwd")
@@ -73,7 +72,6 @@ class ModifyPwdView(View):
         else:
             email = request.POST["email"]
             return render(request, "password_reset.html", {"email": email, "modify_form":modify_form})
-
 ```
 
 ##### url
