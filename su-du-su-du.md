@@ -4,11 +4,17 @@
 
 ```
 
+后台添加资源目录存放的配置
 
+新建media文件夹
 
-配置资源目录存放
+在setting配置
 
-
+```py
+#指明静态资源目录路径
+MEDIA_URL='/media/'
+MEDIA_ROOT =os.path.join(BASE_DIR,'media')
+```
 
 
 
