@@ -81,7 +81,7 @@ from users.views import ModifyPwdView
 url(r'modify_pwd/$', ModifyPwdView.as_view(), name="modify_pwd"),
 ```
 
-##### 注意 ：需在修改密码界面添加,以获取email,根据email修改密码
+##### 注意 ：需在修改密码界面的html添加,以获取email,根据email修改密码
 
 ```py
 <input type = "hidden" name="email" value = {{ email }}>
