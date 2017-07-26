@@ -1,4 +1,4 @@
-##### 1。模版继承
+#### 1。模版继承
 
 新建 一个base.html拷贝org\_list.html内容到里面, 把org\_\_list.html清空当成子继承
 
@@ -56,8 +56,9 @@ from organization.views import OrgView
 
  #模版继承 --课程机构首页
  url(r'org_list/$', OrgView.as_view(), name="org_list"),
-
 ```
+
+
 
 
 
