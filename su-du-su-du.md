@@ -11,8 +11,6 @@ html
 
 ![](/assets/importJGPM.png)
 
-
-
 6.排序
 
 新增字段
@@ -22,7 +20,7 @@ students = models.IntegerField(default=0,verbose_name=u"学习人数")
 course_nums = models.IntegerField(default=0,verbose_name=u"课程数")
 ```
 
-html
+html\(已经和地区做了关联\)
 
 ```py
 <li class="{% if sort == '' %}active{% endif %}"><a href="?&ct={{ category }}&city={{ city_id }}">全部</a> </li>
@@ -40,7 +38,6 @@ if sort:
 
     elif sort =="courses":
         all_orgs = all_orgs.order_by("-course_nums")
-
 ```
 
 
