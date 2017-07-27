@@ -56,6 +56,10 @@ from organization.views import OrgView
  url(r'org_list/$', OrgView.as_view(), name="org_list"),
 ```
 
+#### 在继承模版中进行自定义设置
+
+![](/assets/importCustomPirtue.png)
+
 #### 2.课程机构列表页展示1
 
 后台添加资源目录存放的配置
