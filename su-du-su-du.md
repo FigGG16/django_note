@@ -10,11 +10,21 @@
 
 在setting配置
 
+1.
+
 ```py
 #指明静态资源目录路径
 MEDIA_URL='/media/'
 MEDIA_ROOT =os.path.join(BASE_DIR,'media')
 ```
+
+2.
+
+![](/assets/importPirtue.png)
+
+配置处理url的信息
+
+
 
 
 
