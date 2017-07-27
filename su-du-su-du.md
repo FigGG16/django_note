@@ -8,7 +8,7 @@ sudo pip install django-pure-pagination
 
 添加到注册apps
 
-```
+```py
 INSTALLED_APPS = (
     ...
     'pure_pagination',
@@ -33,7 +33,7 @@ class OrgView(View):
             page = 1
         p = Paginator(all_orgs,3, request=request)
         orgs = p.page(page)
-        
+
         #_________
         return render(request,"org-list.html",{
             "all_orgs":orgs,
