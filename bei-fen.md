@@ -36,8 +36,6 @@
 
 在继承的html模板只要把包含的内容拷贝到里面就可以了！ 可以进行修改，等等！
 
-
-
 加载课程详情的url
 
 在organization的views添加
@@ -58,7 +56,62 @@ from organization.views import OrgView
  url(r'org_list/$', OrgView.as_view(), name="org_list"),
 ```
 
+#### 2.课程机构列表页展示1
 
+后台添加资源目录存放的配置
 
+新建media文件夹
 
+在setting配置
+
+1.
+
+```py
+#指明静态资源目录路径
+MEDIA_URL='/media/'
+MEDIA_ROOT =os.path.join(BASE_DIR,'media')
+```
+
+2.
+
+![](/assets/importPirtue.png)
+
+配置上传的文件处理函数
+
+```py
+from django.views.static import serve
+from mxOnline.settings import MEDIA_ROOT
+
+url(r'media/(?P<path>.*)$',serve,{"document_root":MEDIA_ROOT})
+```
+
+在html中循环遍历即可
+
+```py
+{% for   city in all_citys %}
+{% endfor %}
+```
+
+再然后设置加载图片的路径
+
+```py
+<img width="200" height="120" class="scrollLoading" data-url="{{ MEDIA_URL }}{{ course_org.image }}"/>
+```
+
+在organization的views添加
+
+```py
+class OrgView(View):
+    def get(self,request):
+        all_orgs = CourseOrg.objects.all()
+        org_nums = all_orgs.count()
+        all_citys = CityDict.objects.all()
+        return render(request,"org-list.html",{
+            "all_orgs":all_orgs,
+            "all.citys":all_citys,
+            "org_nums":org_nums
+        })
+```
+
+URLz
 
