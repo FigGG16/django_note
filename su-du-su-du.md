@@ -42,5 +42,32 @@ html循环遍历机构课程的全部课程遍历都是老油条啦\)
 
 0.2实现点击机构介绍
 
+view
+
+```py
+class OrgDescView(View):
+    """
+    机构介绍页
+    """
+    def get(self,request,org_id):
+        current_page = "desc"
+        course_org = CourseOrg.objects.get(id=int(org_id))
+        #有外键都可以用这种方法，反取出内容
+        all_courses = course_org.courses_set.all()
+        return render(request,"org-detail-desc.html",{
+            'course_org':course_org,
+            'current_page':current_page
+        })
+```
+
+urls
+
+```py
+#机构介绍
+from organization.views import OrgDescView
+url(r'^desc/(?P<org_id>\d+)/$',OrgDescView.as_view(),name="org_desc")
+
+```
+
 
 
