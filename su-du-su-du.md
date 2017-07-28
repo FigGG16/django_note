@@ -26,7 +26,7 @@ class OrgHomeView(View):
             'all_courses':all_courses,
             'all_teacher':all_teacher,
             'course_org': course_org
-            
+
         })
 ```
 
@@ -42,12 +42,16 @@ url(r'^home/(?P<org_id>\d+)/$',OrgHomeView.as_view(),name="org_home")
  <a href="{% url 'org:org_home' course_org.id %}">
 ```
 
-html循环遍历机构详情列表
+html循环遍历机构首页的全部课程遍历
 
 ```py
 {% for course in all_courses %}
 {% endfor %}
 ```
+
+实现下图功能点击
+
+![](/assets/importHome.png)
 
 
 
