@@ -66,8 +66,13 @@ urls
 #机构介绍
 from organization.views import OrgDescView
 url(r'^desc/(?P<org_id>\d+)/$',OrgDescView.as_view(),name="org_desc")
-
 ```
+
+机构讲师雷同，没什么好讲的！
+
+目录结构分析
+
+
 
 
 
