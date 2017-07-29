@@ -72,7 +72,5 @@ url(r'^desc/(?P<org_id>\d+)/$',OrgDescView.as_view(),name="org_desc")
 
 目录结构分析
 
-
-
-
+![](/assets/importOrg_base.png)
 
