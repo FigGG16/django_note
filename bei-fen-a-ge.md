@@ -1,4 +1,4 @@
-##### 6.动态页面更新
+##### 6.动态页面更新\(接受较为特殊的\)
 
 view
 
@@ -24,6 +24,15 @@ html访问调用
 
 ```py
 <li><span class="pram word3">章&nbsp;节&nbsp;数：</span><span>{{{ course.get_zj_nums }}}</span></li>
+```
+
+这种 方法的缺点是不能传递字段
+
+学习人数和章节数一样
+
+```py
+def get_learn_user(self):
+    return self.usercourse_set.all()[:5]
 ```
 
 
