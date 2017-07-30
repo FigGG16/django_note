@@ -35,5 +35,16 @@ def get_learn_user(self):
     return self.usercourse_set.all()[:5]
 ```
 
+html
+
+```js
+{% for users_course  in course.get_learn_user%}
+
+<span class="pic"><img width="40" height="40" src="{{ MEDIA_URL }}{{ users_course.user.image }}"/></span>
+
+{% endfor %}
+
+```
+
 
 
