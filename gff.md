@@ -41,6 +41,18 @@ startapp users
  ```
  ROOT_URLCONF = 'mxOnline.urls'
  ```
+ 配置mysql
+ ```
+ DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':"new_mxonline",
+        'USER': 'root',
+        'PASSWORD':'MYSQL366459',
+        'HOST':'127.0.0.1',
+
+
+ ```
  - 创建表
  ```
  makemigrations users
