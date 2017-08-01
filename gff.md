@@ -52,6 +52,15 @@ startapp users
         'PASSWORD':'MYSQL366459',
         'HOST':'127.0.0.1',
 ```
+mac环境使用的pyMysql需在__init__.py文件加上
+
+
+```
+import pymysql
+pymysql.install_as_MySQLdb()import pymysql
+pymysql.install_as_MySQLdb()
+```
+
 
  
  - 创建表
