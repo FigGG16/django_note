@@ -68,6 +68,19 @@ pymysql.install_as_MySQLdb()
  makemigrations users
  
  ```
+ 创建完到该app目录下的apps.py添加
+
+
+```
+ from django.apps import AppConfig
+
+
+class UsersConfig(AppConfig):
+    name = 'users'
+    verbose_name = u"用户信息"
+```
+
+
 ## 2.userModel的完善(解决循环引用问题)
 ![](/assets/Snip20170720_1.png)
  - 2.1分成设计
