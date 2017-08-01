@@ -88,6 +88,7 @@ urlpatterns = [
 ```python
 STATICFILES_DIRS= [
     os.path.join(BASE_DIR,'static')
+]
 ```
 ![](/assets/Snip20170718_4.png)
 
