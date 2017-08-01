@@ -39,7 +39,7 @@ startapp users
  ```
  - 1.5setting重载setting方法
  ```
- ROOT_URLCONF = 'mxOnline.urls'
+AUTH_USER_MODEL="users.UserProfile"
  ```
  配置mysql
 
