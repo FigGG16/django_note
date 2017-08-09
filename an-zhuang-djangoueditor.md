@@ -4,7 +4,7 @@
 pip install -i https://pypi.doubanio.com/simple/ djangoUeditor
 ```
 
-#####  python3下载DjangoUeditor3的zip,然后
+##### python3下载DjangoUeditor3的zip,然后
 
 ```
 cd ...目录。。。。。
@@ -15,8 +15,6 @@ cd ...目录。。。。。
 ```
 python setup.py install
 ```
-
-
 
 ## 2.注册
 
@@ -49,9 +47,7 @@ from DjangoUeditor.models import UEditorField
 style_fields = {"detail":"ueditor"}
 ```
 
-
-
-在xadmin添加插件
+## 3.在xadmin添加插件
 
 在以下目录兴建一个uediyor.py文件
 
