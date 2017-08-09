@@ -4,4 +4,5 @@
 * [mysql的安装和配置](chapter1.md)
 * [django的App驱动安装](djangode-app-qu-dong-an-zhuang.md)
 * [备份](bei-fen.md)
+* [安装富文本编辑器](an-zhuang-djangoueditor.md)
 
