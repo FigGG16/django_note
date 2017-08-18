@@ -7,5 +7,6 @@
 * [第七章](bei-fen.md)
 * [第八章](su-du-su-du.md)
 * [备份啊哥](bei-fen-a-ge.md)
+* [第九章](di-jiu-zhang.md)
 * [第十章](di-shi-zhang.md)
 
