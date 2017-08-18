@@ -13,6 +13,7 @@ class UploadImageForm(forms.ModelForm):
 在View中
 
 ```py
+from django.http import HttpResponse
 class UploadImageView(LoginRequiredMixin,View):
     """
     用户修改头像
@@ -25,7 +26,6 @@ class UploadImageView(LoginRequiredMixin,View):
             return HttpResponse('{"status":"success"}', content_type='application/json')
         else:
             return HttpResponse('{"status":"fail"}', content_type='application/json')
-
 ```
 
 urls
@@ -39,10 +39,6 @@ HTML ,修改头像是一个post请求，
 ```py
  <form class="clearfix" id="jsAvatarForm" enctype="multipart/form-data" autocomplete="off" method="post" action="{% url 'users:image_upload' %}" target='frameFile'>
 ```
-
-
-
-
 
 
 
