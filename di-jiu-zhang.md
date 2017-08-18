@@ -4,10 +4,9 @@
 
 ```
 from django.db.models import Q
-
 ```
 
-```
+```py
  search_keywords = request.GET.get('keywords',"")
         if search_keywords:
             # 课程搜索                              i代表不区分大小写
