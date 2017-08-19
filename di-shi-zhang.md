@@ -40,9 +40,15 @@ HTML ,修改头像是一个post请求，
  <form class="clearfix" id="jsAvatarForm" enctype="multipart/form-data" autocomplete="off" method="post" action="{% url 'users:image_upload' %}" target='frameFile'>
 ```
 
-
-
 #### 2.小喇叭显示未读消息数量
+
+在user的模型中添加获取消息函数
+
+```py
+def get_unread_nums(self):
+    #获取未读消息数量
+    from operation.models import UserMessage #必须把这个MODEL放到这里，放到开头就是循环引用的
+```
 
 
 
