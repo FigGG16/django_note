@@ -45,5 +45,19 @@ handler404 = 'users.views.page_nont_found'
 handler500 = 'users.views.page_error'
 ```
 
+xadmin加载第三方图标
+
+![](/assets/importMyTu.png)
+
+下载第三方font awesome CSS图标软件
+
+解压CSS和fonts并覆盖
+
+在每个model添加
+
+```
+model_icon ="fa fa-address-book-o" #参数，参考网上的图片使用方法
+```
+
 
 
