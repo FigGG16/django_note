@@ -45,7 +45,7 @@ handler404 = 'users.views.page_nont_found'
 handler500 = 'users.views.page_error'
 ```
 
-xadmin加载第三方图标
+#### xadmin加载第三方图标
 
 ![](/assets/importMyTu.png)
 
@@ -57,6 +57,20 @@ xadmin加载第三方图标
 
 ```
 model_icon ="fa fa-address-book-o" #参数，参考网上的图片使用方法
+```
+
+#### 进入页面默认排序
+
+model中添加she
+
+```
+ ordering = ['-click_num']
+```
+
+#### 设置只读字段
+
+```
+readonly_fields=['','',.....]
 ```
 
 
