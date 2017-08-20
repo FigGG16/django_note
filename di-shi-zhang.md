@@ -52,3 +52,19 @@ def get_unread_nums(self):
 
 
 
+django小知识
+
+1. 在下标为1的基础上加2递增
+
+```
+{{ forloop.counter|add:2 }} 
+```
+
+2.   计数到5时变为0
+
+```
+{% if forloop.counter|divisibleby:5 %}
+```
+
+
+
