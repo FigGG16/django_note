@@ -1,74 +1,48 @@
-10.课程评论
+#### 配置404
 
-1.加载评论页面
+404，500页面加载静态文本目录的配置
 
-view
+1.stting
+
+```
+STATIC_ROOT =os.path.join(BASE_DIR,'static')
+```
+
+2.
 
 ```py
-class CommentsView(View):
+DEBUG = False #必须=False，不加载STATICFILES_DIRS，需自己配置静态文本目录
 
-    def get(self,request,course_id):
-        course = Courses.objects.get(id=int(course_id))
-        all_resources = CoursesResource.objects.filter(course=course)
-        all_comments = CourseComments.objects.all()
-
-        return render(request,"course-comment.html",{
-            "course":course,
-            'course_resourses':all_resources,
-            'all_comments':all_comments
-        })
+#当DEBUG = False  ALLOWED_HOSTS = ['*'] 代表链接地址，所有地址均可
+ALLOWED_HOSTS = ['*']
 ```
 
-urls
+3.view
 
 ```py
-url(r'comments/(?P<course_id>\d+)/$', CommentsView.as_view(), name="course_comments"),
+def page_nont_found(request):
+    #全局404处理函数
+    from django.shortcuts import render_to_response
+    response = render_to_response('404.html',{})
+    response.status_code=404
+    return response
 ```
 
-实现跳转自己实现久好了
-
-2.评论功能实现
-
-view
+4.URL
 
 ```py
-class AddComentsView(View):
-    def post(self,request):
-        if not request.user.is_authenticated():
-            #没登录就返回json
-            return HttpResponse('{"status":"fail","msg":"用户未登录"}',content_type='application/json')
+from mxOnline.settings import STATIC_ROOT
 
-        course_id = request.POST.get("course_id",0)
-        comments = request.POST.get('comments',"")
 
-        if int(course_id) >0 and comments:
-            course_comments = CourseComments()
-            #有多条数据或没有数据抛出异常
-            course = Courses.objects.get(id=int(course_id))
-            course_comments.course=course
-            course_comments.comments=comments
-            course_comments.user = request.user
-            course_comments.save()
-            return HttpResponse("{'status':'succes','msg':'添加成功'}", content_type='application/json')
-        else:
-            return HttpResponse("{'status':'file','msg':'添加失败'}", content_type='application/json')
+url(r'static/(?P<path>.*)$', serve, {"document_root": STATIC_ROOT}),
 ```
 
-URLS
+全局
 
-```
-    #添加课程评论，因为已经把参数放到POST中了不需要(?P<course_id>\d+)/
-    url(r'comments/$', AddComentsView.as_view(), name="add_comments")
-```
-
-HTML
-
-评论涉及ajax提交，看教撑
-
-循环遍历评论内容
-
-```
-
+```py
+#配置全局404页面
+handler404 = 'users.views.page_nont_found'
+handler500 = 'users.views.page_error'
 ```
 
 
