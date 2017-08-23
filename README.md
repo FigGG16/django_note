@@ -17,7 +17,6 @@ sudo pip install virtualenv
 ```
 sudo pip install virtualenvwrapper
 ```
-
 ### 需要注意的是我们安装了virtualenvwrapper，不能像window那样直接调用virtualenvwrapper的，需要设置他的环境变量。
 
 ### 首先查找virtualenvwrapper.sh文件放在哪
