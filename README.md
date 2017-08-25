@@ -117,7 +117,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 添加
     'message'
-]
+]si'ke
 ```
 创表指令
 ![](/assets/Snip20170719_5.png)
