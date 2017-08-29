@@ -49,17 +49,19 @@ source /usr/local/bin/virtualenvwrapper.sh
 mkvirtualenv py2web
 ```
 
-### 因为py3web用的是python3所以要指定路径
+###因为py3web用的是python3所以要指定路径
 
 ```
 mkvirtualenv --python=/Users/kinggg/py3/bin/python py3web
 ```
-
 ok  .
 
 ###<font color="red"> 最后使用workon 进入环境变量。。。。。就这样</font>
 
 ### 配置完交了很多智商税！
+
+
+
 
 
 
