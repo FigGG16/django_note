@@ -24,7 +24,12 @@ app目录的建立
 ```
 
 
-
+ 数据库编程
+ ```
+ CREATE DATABASE mydb
+  DEFAULT CHARACTER SET utf8
+  DEFAULT COLLATE utf8_general_ci;
+ ```
 
 
 
