@@ -84,4 +84,10 @@ $ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev 
  DEFAULT CHARACTER SET utf8
  DEFAULT COLLATE utf8_general_ci;
  ```
-## 
+## 通过以上总结
+1. 服务器有错误要开启debug模式调试
+2. django的过滤函数要重写到一个文件,不能用环境变量中的文件，更新维护太麻烦
+3. 还没有把ssh加密上
+4. git要学好分支管理，方便更新服务器上的项目
+
+
