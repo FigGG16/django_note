@@ -63,6 +63,11 @@ $ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev 
   fi
   ```
 
- - 9
+ - 9按照追梦人物的博客严格部署，注意的是：部署项目的环境与开发环境所使用的插件要完全相同，不然会有一堆错误，几个常用的快捷键
+ ```
+  nginx -s reload  ：修改配置后重新加载生效
+  nginx -s stop  :快速停止nginx
+  start nginx   启动Nginx  
+ ```
  
  
