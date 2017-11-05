@@ -78,7 +78,7 @@ $ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev 
 
   3.  sudo apt-get install libmysqlclient-dev 
  ```
- - 2建表并指明字符集 
+ - 2建表并指明utf-8字符集 
  ```sql
  CREATE DATABASE newboke
  DEFAULT CHARACTER SET utf8
