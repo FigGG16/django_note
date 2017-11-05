@@ -2,6 +2,10 @@
  - Ubuntu16.04
  
 ##搭建服务器环境
+ - 添加用户
+ ```
+ adduser myName
+ ```
  - 1安装git
  ```
  sudo apt-get undata
@@ -32,7 +36,33 @@ $ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev 
  - 6设置全局的python版本
  ```python
  $ pyenv global 3.4.3
-$ pyenv versions
-system
-* 3.4.3 (set by /home/seisman/.pyenv/version)
+ $ pyenv versions
+     system
+   * 3.4.3 (set by /home/seisman/.pyenv/version)
+ 
  ```
+ 
+ - 7pip3安装virtualenv和virtualenvwrapper
+ 
+ ```
+ sudo pip install virtualenv
+ sudo pip install virtualenvwrapper
+ ```
+ 
+ - 8新建虚拟环境和workon全局变量
+ ```
+ 8.1$   mkvirtualenv  myBokeEnv
+ 8.2$   vim ~/ .baserc
+ ```
+  - 到该文件的末尾处添加，并屏蔽 if~fi 间的内容
+  ![](/assets/20150421001110213.jpeg)
+  ```python
+  if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    source /usr/local/bin/virtualenvwrapper.sh
+  fi
+  ```
+
+ - 9
+ 
+ 
