@@ -69,5 +69,19 @@ $ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev 
   nginx -s stop  :快速停止nginx
   start nginx   启动Nginx  
  ```
- 
- 
+##数据库的操作
+ - 1安装数据库
+ ```Python
+  1. sudo apt-get install mysql-server
+
+  2. apt-get isntall mysql-client
+
+  3.  sudo apt-get install libmysqlclient-dev 
+ ```
+ - 2建表并指明字符集 
+ ```sql
+ CREATE DATABASE newboke
+ DEFAULT CHARACTER SET utf8
+ DEFAULT COLLATE utf8_general_ci;
+ ```
+## 
