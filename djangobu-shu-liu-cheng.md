@@ -89,6 +89,7 @@ $ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev 
   ```
   SHOW COLUMNS FROM auth_user;
   ```
+  - 
 
 ## 通过以上总结
 1. 服务器有错误要开启debug模式调试
