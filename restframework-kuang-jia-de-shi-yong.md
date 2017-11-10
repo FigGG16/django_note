@@ -141,10 +141,12 @@ class ArticleDeleteAPIView(DestroyAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleDetailSerializers
     lookup_field = 'status'
+...
 ```
  - url 
  
 ```
+...
     #更新
     url(r'^(?P<status>[\w-]+)/edit/$', ArticleUpdateAPIView.as_view(), name="Update"),
     #删除
