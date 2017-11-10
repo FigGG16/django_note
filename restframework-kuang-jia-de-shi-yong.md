@@ -163,7 +163,7 @@ class ArticleCreateSerializers(ModelSerializer):
         fields = '__all__'
 ```
 
- - 在view中添加框架
+ - 在view中包含框架和类
 
 ```python
 from  rest_framework.generics import (***
