@@ -77,6 +77,41 @@ class ArticleDetailAPIView(RetrieveAPIView):
 
 ![](/assets/Snip20171109_4.png)
 
+##根据具体某个字段的值获取api
+ - 在url中修改
+```python
+    #设置具体字段名，根据url的字段的值返回api
+    url(r'^(?P<status>[\w-]+)/$', ArticleDetailAPIView.as_view(), name="detail"),
+
+```
+ - 在serializer.py文件中添加
+
+```python
+...
+class ArticleDetailSerializers(ModelSerializer):
+    class Meta:
+        model = Article
+        fields = [
+            'title',
+            'body',
+            'created_time',
+            'last_modified_time',
+            'status',
+            'abstract']
+```
+
+ - 在views中添加
+ 
+```python
+...
+class ArticleDetailAPIView(RetrieveAPIView):
+
+    queryset = Article.objects.all()
+    serializer_class = ArticleDetailSerializers
+    lookup_field = 'status'
+```
+
+![](/assets/Snip20171109_5.png)
 
 
 
