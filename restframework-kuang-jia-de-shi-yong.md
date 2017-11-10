@@ -153,6 +153,38 @@ class ArticleDeleteAPIView(DestroyAPIView):
     url(r'^(?P<status>[\w-]+)/delete/$', ArticleDeleteAPIView.as_view(), name="Delete"),
 ```
 
+##创建
+ - 在serializer.py文件中添加类
+
+```python
+class ArticleCreateSerializers(ModelSerializer):
+    class Meta:
+        model = Article
+        fields = '__all__'
+```
+
+ - 在view中添加框架
+
+```python
+from  rest_framework.generics import (***
+                                      ,CreateAPIView
+                                      )
+ #创造
+class ArticleCreateAPIView(CreateAPIView):
+    queryset = Article.objects.all()
+    serializer_class = ArticleCreateSerializers                                     
+                                     
+``` 
+
+ - url
+ 
+
+```python
+    #创建
+    url(r'^create/$',ArticleCreateAPIView.as_view(), name="create"),
+```
+
+
 
 
 
