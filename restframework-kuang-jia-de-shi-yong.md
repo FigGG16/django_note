@@ -55,11 +55,24 @@ class ArticleListAPIView(ListAPIView):
 ```
 ##获取第几组的指定api
 
- - 在serializer.py文件中添加
+ - 在serializer.py文件中添加类
 
+```python
+...
+class ArticleDetailAPIView(RetrieveAPIView):
+
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializers
+```
+ - urls
+
+```python
+...
+    #需要指定第几组对象的api
+    url(r'^(?P<pk>\d+)$', ArticleDetailAPIView.as_view(),name="detail"),
 ```
 
-```
+
 
 
 
