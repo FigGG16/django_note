@@ -79,6 +79,7 @@ class ArticleDetailAPIView(RetrieveAPIView):
 
 ##根据具体某个字段的值获取api
  - 在url中修改
+ 
 ```python
     #设置具体字段名，根据url的字段的值返回api
     url(r'^(?P<status>[\w-]+)/$', ArticleDetailAPIView.as_view(), name="detail"),
@@ -112,6 +113,44 @@ class ArticleDetailAPIView(RetrieveAPIView):
 ```
 
 ![](/assets/Snip20171109_5.png)
+
+##添加修改和删除
+ - 包含头文件
+ 
+```python
+from  rest_framework.generics import (ListAPIView
+                                      ,DestroyAPIView
+                                      ,UpdateAPIView
+                                      ,RetrieveAPIView
+                                      )
+```
+
+ - 在View添加类
+
+```python
+#更新
+class ArticleUpdateAPIView(UpdateAPIView):
+
+    queryset = Article.objects.all()
+    serializer_class = ArticleDetailSerializers
+    lookup_field = 'status'
+
+
+#删除
+class ArticleDeleteAPIView(DestroyAPIView):
+    queryset = Article.objects.all()
+    serializer_class = ArticleDetailSerializers
+    lookup_field = 'status'
+```
+ - url 
+ 
+```
+    #更新
+    url(r'^(?P<status>[\w-]+)/edit/$', ArticleUpdateAPIView.as_view(), name="Update"),
+    #删除
+    url(r'^(?P<status>[\w-]+)/delete/$', ArticleDeleteAPIView.as_view(), name="Delete"),
+```
+
 
 
 
