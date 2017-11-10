@@ -169,7 +169,7 @@ class ArticleCreateSerializers(ModelSerializer):
 from  rest_framework.generics import (***
                                       ,CreateAPIView
                                       )
- #创造
+创造
 class ArticleCreateAPIView(CreateAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleCreateSerializers                                     
