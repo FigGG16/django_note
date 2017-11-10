@@ -5,6 +5,7 @@
 
 ```python
 from  rest_framework.serializers import ModelSerializer
+#导入自己的字段模型
 from Category.models import Article
 class ArticleSerializers(ModelSerializer):
     class Meta:
@@ -43,7 +44,9 @@ from django.http import HttpResponse
 #显示api
 class ArticleListAPIView(ListAPIView):
     #这两个是规定写法
+    #获取模型对象
     queryset = Article.objects.all()
+    #需要序列化的字段
     serializer_class = ArticleSerializers
 ```
 
@@ -72,6 +75,7 @@ class ArticleDetailAPIView(RetrieveAPIView):
     url(r'^(?P<pk>\d+)$', ArticleDetailAPIView.as_view(),name="detail"),
 ```
 
+![](/assets/Snip20171109_4.png)
 
 
 
