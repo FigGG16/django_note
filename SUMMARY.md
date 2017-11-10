@@ -10,4 +10,5 @@
 * [第九章](di-jiu-zhang.md)
 * [第十章](di-shi-zhang.md)
 * [Django部署流程](djangobu-shu-liu-cheng.md)
+* [rest\_framework框架的使用](restframework-kuang-jia-de-shi-yong.md)
 
