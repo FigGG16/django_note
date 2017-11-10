@@ -184,6 +184,77 @@ class ArticleCreateAPIView(CreateAPIView):
     url(r'^create/$',ArticleCreateAPIView.as_view(), name="create"),
 ```
 
+##创建删除更新自定义值
+![](/assets/Snip20171110_2.png)
+
+
+##自定义权限
+ - 首先在view中包含权限
+ 
+
+```python
+#导入权限
+from rest_framework.permissions import (
+            AllowAny,           #允许任何人
+            IsAdminUser,        #是否登录
+            IsAuthenticated,    #授权用户
+            IsAuthenticatedOrReadOnly  #   只能读
+)
+```
+
+
+ - 在view.py文件中需要权限的类中添加
+```python
+ permission_classes = [IsAuthenticated,IsAdminUser，...]
+```
+
+
+ - 用自定义的方式
+ 
+ 新建permissions.py文件并添加
+ 
+
+```python
+        #SAFE_METHODS   包含简单的请求方法
+from rest_framework.permissions import BasePermission,SAFE_METHODS
+
+class IsOwnerOrReadOnly(BasePermission):
+
+    #GET则可以允许，PUT会遭到拒接请求
+    my_safe_method = ['GET','PUT']
+    message ='You must be the owner of this object.'
+    def has_permission(self, request, view):
+        if request.method in self.my_safe_method:
+            return True
+        return False
+    
+    #如果文章有用户字段的话此方法进行用户验证
+    # def has_object_permission(self, request, view, obj):
+    #     if request.method in SAFE_METHODS:
+    #         return True
+    #     return obj.user == request.user
+```
+
+ - 在view中导入该类
+ 
+
+```
+...
+from .permissions import IsOwnerOrReadOnly
+
+
+#在更新类中增加此权限
+class ArticleUpdateAPIView(RetrieveUpdateAPIView):
+    ...
+    permission_classes = [... ,IsOwnerOrReadOnly]
+    
+```
+拓展
+>继承RetrieveUpdateAPIView，允许Allow: GET, PUT, PATCH, HEAD, OPTIONS
+>继承UpdateAPIView ,Allow: PUT, PATCH, OPTIONS
+
+
+ 
 
 
 
