@@ -93,7 +93,105 @@ which git-shell
 ```
 ![](/assets/Snip20171114_5.png)
 
+更改默认启动shell的路径
+
+```
+sudo chsh git
+```
+![](/assets/Snip20171114_6.png)
+
+返回客户端尝试进行ssh登录就会报错
+```
+hint: ~/git-shell-commands should exist and have read and execute access.
+```
+好了！ 配置git-shell 就结束了！
+
+
+ - 4-2继续
+ 在指定目录下新建git文件夹
  
+```
+$ sudo mkdir git
+$ cd git/
+#创建仓库文件夹
+$ sudo mkdir project-name.git
+$ cd project-name.git
+#实例仓库
+$ sudo git init --bare
+```
+设置git 目录的访问权限组
+
+```
+sudo chown -R git:git git
+```
+
+##5客户端
+
+安装git
+
+```
+sudo apt-get install git
+```
+配置git全局属性
+
+
+```
+$ git config --global user.name "name"
+$ git config --global user.email xxx@xxx.com
+$ git config --global core.editor gedit
+
+```
+
+选择指定目录初始化仓库
+
+```
+git init
+```
+然后新增文件
+
+```
+$ touch README
+```
+添加到仓库的暂存区
+
+```
+$ git add .
+```
+提交到本地仓库
+
+```
+$ git commit -m"***"
+```
+
+添加远程仓库
+
+```
+git remote add origin git@gitserver:~/git/project-name.git
+```
+
+提交到远程仓库
+
+```
+git push origin master
+```
+
+好了！  安装结束！
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
