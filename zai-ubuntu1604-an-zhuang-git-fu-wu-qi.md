@@ -131,7 +131,7 @@ sudo chown -R git:git git
 
 
 ```
-$ cd /home/testgit/sample.git
+$ cd /home/testgit/project-name.git
 $ cd hooks
 //这里我们创建post-receive文件
 $ vim post-receive
