@@ -125,6 +125,34 @@ $ sudo git init --bare
 sudo chown -R git:git git
 ```
 
+4-2：实现自动同步到站点目录
+
+进入裸仓库：/home/testgit/project-name.git
+
+
+
+```
+$ cd /home/testgit/sample.git
+$ cd hooks
+//这里我们创建post-receive文件
+$ vim post-receive
+//在该文件里输入以下内容
+#!/bin/bash
+git --work-tree=/home/项目目录 checkout -f
+//保存退出后，将该文件用户及用户组都设置成git
+$ chown git:git post-receive
+//由于该文件其实就是一个shell文件，我们还应该为其设置可执行权限
+$ chmod +x post-receive
+
+```
+
+
+
+
+
+
+
+
 ##5客户端
 
 安装git
