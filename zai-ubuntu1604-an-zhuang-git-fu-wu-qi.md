@@ -130,7 +130,6 @@ sudo chown -R git:git git
 进入裸仓库：/home/testgit/project-name.git
 
 
-
 ```
 $ cd /home/testgit/sample.git
 $ cd hooks
@@ -145,12 +144,6 @@ $ chown git:git post-receive
 $ chmod +x post-receive
 
 ```
-
-
-
-
-
-
 
 
 ##5客户端
