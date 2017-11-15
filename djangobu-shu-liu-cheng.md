@@ -96,5 +96,6 @@ $ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev 
 2. django的过滤函数要重写到一个文件,不能用环境变量中的文件，更新维护太麻烦
 3. 还没有把ssh加密上
 4. git要学好分支管理，方便更新服务器上的项目
+5. 出现找不到执行python mannge.py ** 提示找不到DJango, 把python 换成当前虚拟环境的python版本 /bin/python3.6    
 
-
+  
